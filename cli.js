@@ -1,11 +1,22 @@
-// aqui vai ficar toda manipulaçao de console
-const { soma, lerArquivo } = require('./index.js');
-const chalk = require('chalk'); // "css"
-const resultado = soma(5, 8);
+//aqui vai ficar toda manipulaçao de console =>
 
-console.log(chalk.bgBlue("o resultado da soma é: "), chalk.blue(resultado));
+const { mdLinks } = require("./index.js");
+const chalk = require("chalk"); // "css"
 
-lerArquivo('./test/files/oneFile.md')
-.then((conteudodoArquivo) =>{
-    console.log(chalk.bgGray(conteudodoArquivo))  // chamando o arquivo oneFile mas como uma promisse <=
-});
+const caminho = process.argv[2];
+
+mdLinks(caminho)
+  .then((links) => {
+    // Assuming that links is an array of link objects
+    links.forEach((link) => {
+      console.log(
+        chalk.bgBlue(link.text) +
+          chalk.bgBlue('url:') +
+          chalk.blue(link.url) +
+          chalk.yellow('status')
+      );
+    });
+  })
+  .catch((err) => {
+    console.error(chalk.red('Erro', err));
+  });
