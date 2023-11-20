@@ -1,10 +1,10 @@
-const mdLinks = require('../index.js');
+const { mdLinks } = require('../index.js');
 
 
 describe('mdLinks', () => {
 
-  it('é um objeto', () => {
-    expect(typeof mdLinks).toBe('object');
+  it('é uma função', () => {
+    expect(typeof mdLinks).toBe('function');
     
   });
 

@@ -7,7 +7,6 @@ const caminho = process.argv[2];
 
 mdLinks(caminho)
   .then((links) => {
-    // Assuming that links is an array of link objects
     links.forEach((link) => {
       console.log(
         chalk.bgBlue(link.text) +

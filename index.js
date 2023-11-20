@@ -21,13 +21,29 @@ function mdLinks(caminhoDoArquivo) {
           links.push({ text, url });
         }
 
-        console.log('Conteúdo do arquivo:', data);
-
         resolve(links);
       }
     });
   });
 }
+function validarLinks(links) { 
+  const linkPromises = links.map((link) => { 
+    if (undefined) { 
+      return fetch(link.url) 
+    .then((resposta) => {
+      link.ok = resposta.status >= 200 && resposta.status < 400
+      link.status = resposta.status 
+    })
+    .catch(() => {
+      link.ok = false;
+      link.status = 'Erro no link'
+    });
+    } else {
+      return Promise.resolve();
+    }
+  });
+  return Promise.all(linkPromises); 
+}
 
-module.exports = { mdLinks };
+module.exports = { mdLinks, validarLinks };
 
