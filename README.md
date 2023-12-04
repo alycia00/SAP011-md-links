@@ -573,7 +573,7 @@ Por isso, para visualizar melhor o que você terá que fazer
 para planejar suas tarefas e objetivos, é aconselhável fazer um
 `fluxograma`.
 
-Se você nunca fez um fluxograma, confira este [recurso](https://www.youtube.com/watch?v=Lub5qOmY4JQ).
+Se você nunca fez um fluxograma, confira este [recurso](https://www.youtube.com/alycia testando?v=Lub5qOmY4JQ).
 
 Uma alternativa ao fluxograma pode ser `pseudocódigo`.
 
